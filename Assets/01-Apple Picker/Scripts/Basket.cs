@@ -37,7 +37,7 @@ public class Basket : MonoBehaviour {
         this.transform.position = pos;
     }
 
-     void OnCollisionEnter( Collision coll ) {                         // a
+    void OnCollisionEnter( Collision coll ) {                         // a
 
         // Find out what hit this basket
         GameObject collidedWith = coll.gameObject;                    // b
@@ -58,7 +58,6 @@ public class Basket : MonoBehaviour {
             if (score > HighScore.score) {
                 HighScore.score = score;
             }
-        }
-
-     }
+        } 
+    }
 }
