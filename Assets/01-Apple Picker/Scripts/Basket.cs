@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Basket : MonoBehaviour {
 
-  [Header("Set Dynamically")]
+    [Header("Set Dynamically")]
     public Text           scoreGT;                                          // a
 
      void Start() {
