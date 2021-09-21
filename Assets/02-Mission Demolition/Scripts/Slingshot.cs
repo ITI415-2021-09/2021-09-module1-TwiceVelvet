@@ -5,6 +5,7 @@ using System.Collections;
 
 
 public class Slingshot : MonoBehaviour {
+    static private Slingshot S;       
 
   // fields set in the Unity Inspector pane
 
@@ -21,8 +22,13 @@ public class Slingshot : MonoBehaviour {
     public GameObject          projectile;                                  // b
     public bool                aimingMode;                                  // b
     private Rigidbody             projectileRigidbody;                       
-
     
+    static public Vector3 LAUNCH_POS {                                        // b
+        get {
+            if (S == null ) return Vector3.zero;
+            return S.launchPos;
+        }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +36,7 @@ public class Slingshot : MonoBehaviour {
     }
 
     void Awake() {
+        S = this;
         Transform launchPointTrans = transform.Find("LaunchPoint");              // a
         launchPoint = launchPointTrans.gameObject;
         launchPoint.SetActive( false );    
