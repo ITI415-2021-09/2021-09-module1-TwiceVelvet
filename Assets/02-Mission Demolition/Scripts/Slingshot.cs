@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 using System.Collections;
 
 
@@ -21,6 +22,12 @@ public class Slingshot : MonoBehaviour {
     public bool                aimingMode;                                  // b
     private Rigidbody             projectileRigidbody;                       
 
+    
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
 
     void Awake() {
         Transform launchPointTrans = transform.Find("LaunchPoint");              // a
@@ -30,9 +37,7 @@ public class Slingshot : MonoBehaviour {
     }
 
     void OnMouseEnter() {
-        print("Slingshot:OnMouseEnter()");
-
-         //print("Slingshot:OnMouseEnter()");
+        //print("Slingshot:OnMouseEnter()");
         launchPoint.SetActive( true );                                           // b
 
     }
@@ -88,6 +93,7 @@ public class Slingshot : MonoBehaviour {
             aimingMode = false;
             projectileRigidbody.isKinematic = false;
             projectileRigidbody.velocity = -mouseDelta * velocityMult;
+            FollowCam.POI = projectile;
             projectile = null;
         }
     }
