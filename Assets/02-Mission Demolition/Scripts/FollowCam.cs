@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour{
+public class FollowCam : MonoBehaviour{
     static public GameObject POI; // The static point of interest                // a
 
-    Header("Set in Inspector")]
+    [Header("Set in Inspector")]
     public float             easing = 0.05f;
     public Vector2              minXY = Vector2.zero;
 

@@ -28,12 +28,8 @@ public class Slingshot : MonoBehaviour {
             if (S == null ) return Vector3.zero;
             return S.launchPos;
         }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
+
 
     void Awake() {
         S = this;
@@ -102,6 +98,8 @@ public class Slingshot : MonoBehaviour {
             projectileRigidbody.velocity = -mouseDelta * velocityMult;
             FollowCam.POI = projectile;
             projectile = null;
+            MissionDemolition.ShotFired();                             // a
+            ProjectileLine.S.poi = projectile;                         // b
         }
     }
 }
