@@ -6,7 +6,7 @@ public class Paddle : MonoBehaviour
 {
     public Camera mainCamera;
     float leftMax = 70;
-    float rightMax = 530;
+    float rightMax = 560;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,6 @@ public class Paddle : MonoBehaviour
         float maxMovement = Mathf.Clamp(Input.mousePosition.x,leftMax,rightMax);
         float worldxPos = mainCamera.ScreenToWorldPoint(new Vector3(maxMovement,0,0)).x;
         //Paddle moves w/ mouse in relation to main camera
-        this.transform.position = new Vector3(worldxPos, -4, 0);
+        this.transform.position = new Vector3(worldxPos, -17, 0);
     }
 }

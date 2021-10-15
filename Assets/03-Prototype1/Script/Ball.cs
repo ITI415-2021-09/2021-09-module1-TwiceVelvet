@@ -9,7 +9,7 @@ public class Ball : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
@@ -21,6 +21,7 @@ public class Ball : MonoBehaviour
     void Movement(){
         if(GameManager.startGame == true && GameManager.gameStarted == false){
             rb.AddForce(transform.up * 500f);
+            rb.AddForce(transform.right * -250f);
             GameManager.gameStarted = true;
         }
     }
