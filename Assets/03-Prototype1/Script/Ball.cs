@@ -48,5 +48,10 @@ public class Ball : MonoBehaviour
         if(collision.gameObject.tag == "block"){
             Destroy(collision.gameObject); //Destroy intersecting objects
         }
+
+        if(collision.gameObject.tag == "LoseBox"){
+            Destroy(this.gameObject);
+        }
+        
     }
 }
